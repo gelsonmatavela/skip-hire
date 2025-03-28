@@ -21,7 +21,7 @@ const ModalHeavyWaste: React.FC<ModalProps> = ({ onClose }) => {
 
   const handleContinue = () => {
     router.push("/skipeSelect");
-    onClose(); 
+    onClose();
   };
 
   useEffect(() => {
@@ -36,7 +36,7 @@ const ModalHeavyWaste: React.FC<ModalProps> = ({ onClose }) => {
     <>
       {!isSecondModalOpen && (
         <div className="fixed inset-0 flex items-center justify-center bg-black/50">
-          <div className="bg-zinc-900 text-white p-6 rounded-lg shadow-lg w-2xl flex flex-col max-h-[80vh] overflow-y-auto scrollbar-none border-r border-zinc-200">
+          <div className="bg-zinc-900 text-white p-6 rounded-lg shadow-lg w-full sm:w-[90%] md:w-[70%] lg:w-[50%] xl:w-[40%] flex flex-col max-h-[80vh] overflow-y-auto scrollbar-none border-r border-zinc-200">
             <h2 className="text-xl text-left mb-4">Heavy Waste Types</h2>
 
             <div className="flex flex-col bg-yellow-700/20 w-full border-1 border-yellow-300/50 p-4 rounded-lg mb-4">
@@ -54,7 +54,7 @@ const ModalHeavyWaste: React.FC<ModalProps> = ({ onClose }) => {
               </div>
             </div>
 
-            <div className="grid grid-cols-2 gap-4 w-full">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-4 w-full">
               {modalHeavyWasteTypes.map((item) => (
                 <div
                   key={item.id}
@@ -118,7 +118,7 @@ const ModalHeavyWaste: React.FC<ModalProps> = ({ onClose }) => {
 
       {isSecondModalOpen && (
         <div className="fixed inset-0 flex items-center justify-center bg-black/50">
-          <div className="bg-zinc-900 text-white p-6 rounded-lg shadow-lg w-2xl flex flex-col max-h-[80vh] overflow-y-auto scrollbar-none border-r border-zinc-200">
+          <div className="bg-zinc-900 text-white p-6 rounded-lg shadow-lg w-full sm:w-[90%] md:w-[70%] lg:w-[50%] xl:w-[40%] flex flex-col max-h-[80vh] overflow-y-auto scrollbar-none border-r border-zinc-200">
             <PlasterBoard
               onClose={function (): void {
                 throw new Error("Function not implemented.");

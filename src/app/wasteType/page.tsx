@@ -61,11 +61,11 @@ export default function NextPage() {
       <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-center sm:justify-center">
         <div className="flex flex-col gap-4 items-center justify-center md:flex-col-reverse md:max-w-[full] md:min-w-[600px]">
           <div className="flex justify-center items-center">
-            <h5 className="text-2xl font-bold">Which type of waste best describes what you are disposing of?</h5>
+            <h5 className="text-2xl font-bold text-center">Which type of waste best describes what you are disposing of?</h5>
           </div>
         </div>
 
-        <div className="flex flex-col bg-blue-900/[0.25] w-4xl border-[1px] border-blue-500/[0.3] p-4 rounded-lg">
+        <div className="flex flex-col bg-blue-900/[0.25] w-full sm:w-11/12 md:w-4xl border-[1px] border-blue-500/[0.3] p-4 rounded-lg mx-auto">
           <div className="flex items-center gap-2">
             <Info className="text-blue-500" />
             <span className="text-zinc-400">
