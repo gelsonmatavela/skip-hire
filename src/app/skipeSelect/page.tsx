@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import { Button } from "../../components/button/Button";
-import { CheckCircle } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { motion } from "framer-motion";
 
