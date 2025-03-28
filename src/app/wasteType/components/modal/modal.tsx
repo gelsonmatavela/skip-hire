@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { ModalMultipleSelect } from "../../../../../data/modalSelect";
 
 interface Item {
@@ -9,30 +9,26 @@ interface Item {
   egs: string[];
 }
 
-const ModalMultipleSelectComponent: React.FC = () => {
-  const [selectedItems, setSelectedItems] = useState<number[]>([]);
+interface ModalMultipleSelectComponentProps {
+  selectedItems: number[];
+  onSelect: (id: number) => void;
+}
 
-  const handleSelect = (id: number) => {
-    setSelectedItems((prev) =>
-      prev.includes(id) ? prev.filter((item) => item !== id) : [...prev, id]
-    );
-  };
-
+const ModalMultipleSelectComponent: React.FC<ModalMultipleSelectComponentProps> = ({ selectedItems, onSelect }) => {
   return (
     <div className="grid grid-cols-2 gap-4 p-5">
       {ModalMultipleSelect.map((item) => (
         <div
           key={item.id}
-          onClick={() => handleSelect(item.id)}
+          onClick={() => onSelect(item.id)}
           className={`flex p-4 w-110 rounded-lg cursor-pointer transition-all ease-in-out duration-300 
             ${selectedItems.includes(item.id)
               ? "bg-blue-500/10 text-white border-2 border-blue-800"
-              : "bg-zinc-800 text-white border-zinc-900 "}`
-          }
+              : "bg-zinc-800 text-white border-2 border-zinc-600 hover:border-blue-800 duration-600"}`}
         >
           <div
             className={`flex items-center justify-center w-10 h-10 rounded-full border-1 transition-all ease-in-out duration-300
-              ${selectedItems.includes(item.id) ? "bg-zinc-800 border-1 border-zinc-700  text-blue-500 " : "text-zinc-300 border-zinc-500"}`}
+              ${selectedItems.includes(item.id) ? "bg-zinc-800 border-1 border-zinc-700 text-blue-500 " : "text-zinc-300 border-zinc-500"}`}
           >
             <item.icon size={24} />
           </div>
@@ -44,19 +40,24 @@ const ModalMultipleSelectComponent: React.FC = () => {
                 <input
                   type="checkbox"
                   checked={selectedItems.includes(item.id)}
-                  onChange={() => handleSelect(item.id)}
-                  className="cursor-pointer"
+                  onChange={() => onSelect(item.id)}
+                  className="cursor-pointer bg-zinc-800"
                 />
               </div>
             </div>
-            <p className="text-zinc-500 text-sm">{item.subTitle}</p>
+            <p className="text-zinc-200 text-sm">{item.subTitle}</p>
+            <ul className="list-none">
+              <li>Example:</li>
+            </ul>
 
-            <div className="grid grid-cols-2 gap-2 mt-2 text-sm text-zinc-500">
+            <div className="grid grid-cols-2 gap-2 mt-2 text-sm text-zinc-300">
               {item.egs.map((eg, index) => (
-                <span key={index} className="flex  items-center">
-                    <ul className="list-disc ml-4">
-                        <li>{eg}</li>
-                    </ul>
+                <span key={index} className="flex items-center">
+                 
+                  <ul className="list-disc ml-4">
+                    
+                    <li>{eg}</li>
+                  </ul>
                 </span>
               ))}
             </div>
