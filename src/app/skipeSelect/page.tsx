@@ -4,57 +4,7 @@ import { useState } from "react";
 import { Button } from "../../components/button/Button";
 import { useRouter } from "next/navigation";
 import { motion } from "framer-motion";
-
-const skipes = [
-  {
-    id: 1,
-    image: "/images/skipe1.png",
-    title: "4 Yard Skip",
-    subtitle: "7 day hire period",
-    price: "£234",
-    period: "per week",
-  },
-  {
-    id: 2,
-    image: "/images/skipe2.png",
-    title: "6 Yard Skip",
-    subtitle: "7 day hire period",
-    price: "£298",
-    period: "per week",
-  },
-  {
-    id: 3,
-    image: "/images/skipe3.png",
-    title: "8 Yard Skip",
-    subtitle: "7 day hire period",
-    price: "£304",
-    period: "per week",
-  },
-  {
-    id: 4,
-    image: "/images/skipe3.png",
-    title: "14 Yard Skip",
-    subtitle: "7 day hire period",
-    price: "£454",
-    period: "per week",
-  },
-  {
-    id: 5,
-    image: "/images/skipe3.png",
-    title: "16 Yard Skip",
-    subtitle: "7 day hire period",
-    price: "£556",
-    period: "per week",
-  },
-  {
-    id: 6,
-    image: "/images/skipe3.png",
-    title: "20 Yard Skip",
-    subtitle: "7 day hire period",
-    price: "£763",
-    period: "per week",
-  },
-];
+import { skipes } from "../../../data/skipes";
 
 const disabledSkips = [Math.floor(Math.random() * skipes.length), Math.floor(Math.random() * skipes.length)];
 
@@ -67,7 +17,7 @@ export default function SkipSelection() {
   };
 
   const handleContinue = () => {
-    router.push("/nextPage");
+    router.push("/permitCheck");
   };
 
   const handleBack = () => {

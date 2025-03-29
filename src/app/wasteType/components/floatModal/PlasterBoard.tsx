@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { plasterBoard } from "../../../../../data/plasterBoard";
-import { Info } from "lucide-react";
+import { AlertOctagon, Info } from "lucide-react";
 
 interface ModalProps {
   onClose: () => void;
@@ -34,7 +34,7 @@ const PlasterBoard: React.FC<ModalProps> = ({ onClose }) => {
             <div className="flex flex-col bg-yellow-700/20 w-full border border-yellow-300/50 p-4 rounded-lg mb-4">
               <div className="flex flex-col items-start gap-2">
                 <div className="flex items-center gap-2">
-                  <Info className="text-yellow-500" />
+                  <AlertOctagon className="text-yellow-500" />
                   <span className="text-yellow-500 font-bold">Important Notice</span>
                 </div>
                 <span className="text-zinc-400">

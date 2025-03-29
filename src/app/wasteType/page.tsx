@@ -39,7 +39,7 @@ export default function NextPage() {
       setIsModalOpen(true);
     } else if (selectedItems.length === 1) {
       localStorage.setItem('selectedGardenWaste', 'false');
-      router.push('/next-page');
+      // router.push('/permitChecj');
     } else if (selectedItems.length > 1) {
       localStorage.setItem('selectedGardenWaste', 'false');
       setIsModalOpen(true);
