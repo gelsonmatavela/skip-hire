@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { Info } from "lucide-react";
+import { Info, Timer } from "lucide-react";
 import { PermitCheckSelect } from "../../../../data/permitCheck";
 
 interface Item {
@@ -58,14 +58,14 @@ const PermitCheckSelectComponent: React.FC<PermitCheckSelectComponentProps> = ({
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -10 }}
           transition={{ duration: 0.3, ease: "easeOut" }}
-          className="absolute -bottom-25 right-0 w-auto flex bg-blue-900/[0.75] border border-blue-500/[0.3] p-6 rounded-lg"
+          className="absolute -bottom-40 right-0 w-100 flex bg-yellow-500/10 border border-blue-500/[0.3] p-6 rounded-lg"
         >
           <div className="flex flex-col gap-3">
             <div className="flex items-center gap-3">
-              <Info className="text-blue-500" />
-              <span className="text-blue-500 font-bold">1 Tonne Bag Required</span>
+              <Info className="text-yellow-500" />
+              <span className="text-yellow-500 font-bold">Permit Required</span>
             </div>
-            <span className="text-zinc-400 text-sm">For small amounts of plasterboard (up to 5%)</span>
+            <span className="text-zinc-200 text-sm">A permit is required when placing a skip on a public road. We'll handle the permit application process for you. An additional fee of £84.00 will be added to your order.</span>
           </div>
         </motion.div>
       )}
@@ -76,14 +76,14 @@ const PermitCheckSelectComponent: React.FC<PermitCheckSelectComponentProps> = ({
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -10 }}
           transition={{ duration: 0.3, ease: "easeOut" }}
-          className="absolute -bottom-60 mb-5 right-0 w-auto flex bg-blue-900/[0.75] border border-blue-500/[0.3] p-6 rounded-lg"
+          className="absolute -bottom-85 mb-5 right-0 w-100 flex bg-blue-500/10 border border-blue-500/[0.3] p-6 rounded-lg"
         >
           <div className="flex flex-col gap-3">
             <div className="flex items-center gap-3">
-              <Info className="text-blue-500" />
-              <span className="text-blue-500 font-bold">1 Tonne Bag Required</span>
+              <Timer className="text-blue-500" />
+              <span className="text-blue-500 font-bold">Processing Timed</span>
             </div>
-            <span className="text-zinc-400 text-sm">For small amounts of plasterboard (up to 5%)</span>
+            <span className="text-zinc-200 text-sm">The council requires 5 working days notice to process permit applications. Please plan your delivery date accordingly.</span>
           </div>
         </motion.div>
       )}
